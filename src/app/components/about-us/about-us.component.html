@@ -1,0 +1,23 @@
+<div class="main custom-text">
+  <!-- Title -->
+  <div class="title align-center">
+    About&nbsp;Us
+  </div>
+  <!-- Description -->
+  <div class="description" *ngFor="let item of list;let i=index">
+    <div class="text-md my">
+      {{item.title}}
+    </div>
+    <div class="text-md my">
+      {{item.description}}
+    </div>
+  </div>
+  <!-- Home button -->
+  <div class="align-center">
+    <button class="custom-button" (click)="home()">
+      <div class="custom-text text-md">
+        Home
+      </div>
+    </button>
+  </div>
+</div>

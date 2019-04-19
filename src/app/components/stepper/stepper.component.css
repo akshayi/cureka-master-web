@@ -1,0 +1,215 @@
+.questions-col {
+    margin-top: 10px
+}
+
+.questions {
+    font-weight: 600;
+    display: inline-flex;
+    padding: 10px;
+    font-size: 18px;
+    color: #b29090;
+}
+
+::ng-deep.ng-dropdown-panel {
+    opacity: 1;
+    background: white;
+    position: absolute;
+    margin: 0px;
+    padding: 0px
+}
+
+.question-align {
+    text-align: left !important;
+}
+
+.day-select {
+    border: 2px;
+    border-color: #664e4e;
+    margin-top: 7px;
+    font-weight: 600;
+    background: #FDF4F4;
+    display: flex;
+    height: 33px;
+    padding: 5px;
+    color: #B29090 !important;
+    text-align: center
+}
+
+.radio-button-label {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-weight: 600;
+    font-size: 18px;
+    color: #b29090;
+}
+
+.radio-button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #3b3535;
+    background: #d8d8d8;
+    vertical-align: bottom;
+}
+
+/**
+* File upload input css
+*/
+.input-color{
+    border: 1px solid #979797;
+    background: #fdf4f4;
+}
+
+.input-text{
+    max-width: 133px;
+    height: 50px;   
+    float: right;   
+}
+
+.input-text::placeholder {
+    color: #b29090;
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.1504011px;
+}
+
+.input-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-file{
+    color: #b29090;
+    height: 50px;
+    float: right;
+    font-family: Muli;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    display: flex;
+    letter-spacing: 0.1504011px;
+    white-space: pre-wrap;
+}
+
+
+input[type=file] {
+    font-size: 25px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+.input-file::-webkit-file-upload-button{
+     visibility: hidden;
+}
+
+.text-div{
+    width:55%;
+}
+
+.file-div{
+    width:40%;
+}
+
+.photo-div{
+    display:none;
+}
+
+.arrow-icon{
+    margin: auto;
+    font-size: 20px;
+    color:#b29090!important
+}
+
+.image-btn{
+  width: 81px;
+  height: 30px;
+  margin: 3px 20% 3px auto; 
+  color: #e1818a;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 0.1504011px;
+  white-space: pre-wrap;
+}
+
+.upload-img-div{
+    display: none;
+}
+
+.upload-img{
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+
+@media(max-width: 650px) {
+    .questions {
+        font-weight: 600;
+        display: inline-flex;
+        padding: 5px;
+        font-size: 13px;
+        color: #b29090;
+        text-align: left
+    }
+    .radio-button {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #3b3535;
+        background: #d8d8d8;
+    }
+    .radio-button-label {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        font-weight: 600;
+        font-size: 13px;
+        color: #b29090;
+        margin-top: 10px;
+        vertical-align: bottom;
+    }
+    .radio-label {
+        margin-top: 4px;
+    }
+
+    /**
+    * File upload input css
+    */
+    .input-div{
+        display: none;
+    }
+    
+    .upload-img-div{
+        display: block;
+    }
+}
+
+.file-upload-input {
+    display: none;
+}
+
+.uploader-circle {
+    size: 23px;
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease-out;
+}
+
+i {
+    font-size: 24px;
+    color: #000;
+}

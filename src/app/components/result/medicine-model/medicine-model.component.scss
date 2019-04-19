@@ -1,0 +1,174 @@
+.main{
+    border: 1px solid #979797;
+    background: #d8d8d8;
+    height: 100%;
+}
+
+::ng-deep .modal-dialog {
+    max-width: 660px;
+}
+
+
+/**
+* Text css
+*/
+.text-md{
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 0.1838236px;
+}
+
+.title{
+  margin-top: 30px;
+  height: 39px;
+  font-size: 31px;
+  line-height: 39px;
+  letter-spacing: 0.2279413px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    text-align: left;
+}
+
+.cross-icon{
+    float: left;
+    padding-left: 30px
+}
+
+/**
+* Alignment css
+*/
+
+.dir-row{
+    display: flex;
+    flex-direction: row;
+}
+
+/**
+* Image box
+*/
+.details{
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.box{
+  width: 223px;
+  border: 1px solid #979797;
+  background: #a99c9c;
+  margin-bottom:unset;
+}
+
+.info{
+    padding-left: 30px;
+}
+
+.buy{
+    margin-top:40px;
+}
+
+.done{
+    padding:1rem;
+    font-size: 25px;
+}
+
+.cross-icon{
+    display: none;
+}    
+
+/**
+* Mobile view
+*/
+@media(max-width: 650px) {
+
+    app-medicine-model{
+        height: 100%;
+    }
+    ::ng-deep .modal-dialog {
+        max-width: 500px;
+    }
+    ::ng-deep .modal-content {
+        height: 100%!important;
+    }
+
+    .details{
+        margin: 30px 50px;
+    }
+
+    .dir-row{
+        flex-direction: column;
+        display: flex;
+    }
+
+    .info{
+        padding-left:unset;
+        padding-top: 30px;
+    }
+
+    .buy{
+        margin-top:unset;
+    }
+
+    .box{
+        width: auto;
+        min-width: 249px;
+        min-height: 121px;
+    }
+
+    .cross-icon{
+       display: none;
+    }    
+}
+
+@media(max-width:500px){
+    ::ng-deep .modal-dialog {
+        max-width: 100%;
+        margin:auto;
+        height: 100%;
+    }
+
+    .title{
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        height: unset;
+        letter-spacing: 0.1470589px;
+    }
+
+    .text-md{
+        font-size: 15px;
+        line-height: 19px;
+        letter-spacing: 0.1315046px;
+    }
+
+    .details{
+        margin: 10px;
+    }
+    
+    .info{
+        padding-left: unset;
+        padding-top: 10px;
+    }
+
+    .done{
+        padding:5px;
+        height: 43px;
+        border: 1px solid #979797;
+        background: #a8a6c3;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.2005348px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .cross-icon{
+        display: unset;
+        float: left;
+        padding-left: 10px
+    }    
+}

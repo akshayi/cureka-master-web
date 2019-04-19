@@ -1,0 +1,33 @@
+<div>
+  <div id="question-component">
+    <div class="col-md-12 clear-text">
+      <span aria-hidden="true" class="cross-icon" (click)="modalRef.hide()">&times;</span>
+      <span class="display-hide"> Clear</span>
+    </div>
+    <div class="col-md-12 header-text">
+      Help us understand your symtoms better so that we can help you
+    </div>
+  </div>
+  <div class="header-step-texts">
+    <div *ngFor="let index of indexs ;last as isLast" class="header-steps">
+      <div class="steps-header-text">{{isLast?'Done':'Step'}}</div>
+      <div class="stepper-circle">
+        <span [ngClass]="{'bs-stepper-circle-active':currentIndex===index,
+                'bs-stepper-circle':currentIndex!==index}">{{index}}</span>
+        <div [ngStyle]="{'display:none': isLast}" [ngClass]="{'stepper-line-active': currentIndex===index ,
+                      'class-none':isLast,'stepper-line-disable':currentIndex !==index}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [style.display]="selected ? 'block' : 'none'" style="padding:20px">
+    <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+  </div>
+
+
+  <div class="step-navigation-bar" (click)="incrementIndex()">
+    <button class="next-button" cdkStepperNext>Next</button>
+  </div>
+
+</div>

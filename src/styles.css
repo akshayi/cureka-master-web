@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0%;
+    font-family: Muli;
+}
+
+.custom-text{
+    font-family: Muli;
+    font-weight: 800;
+}
+
+.align-center{
+    width: 100%!important;
+    text-align:center!important;
+}
+
+.custom-button{
+    width: 144px;
+    height: 58px;
+    margin-top: 73px;
+    background: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    border:0px;
+}
+app-medicine-model{
+    height: 100%;
+}

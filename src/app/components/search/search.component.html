@@ -1,0 +1,38 @@
+<div class="main">
+  <div class="body">
+    <!-- text -->
+    <div class="main-text align-center">
+      Hi, how are you feeling today?
+    </div>
+    <!-- search bar -->
+    <div class="align-center">
+
+      <ng-select #select [items]="list" [multiple]="true" bindLabel="login" [(ngModel)]="selectedUsers2"
+        class="custom-input" placeholder="Click here to enter your symptoms" notFoundText="click to add more symptoms"
+        maxSelectedItems="5">
+        <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+          <div class="ng-value" *ngFor="let item of (items ? items.slice(0,5): []);let i = index">
+            <span class="ng-value-label">{{item.login}}</span>
+            <span class="ng-value-icon right" aria-hidden="true" >,</span>
+          </div>
+          <div class="ng-value" *ngIf="items.length > 5">
+            <span class="ng-value-label">{{items.length - 5}} more...</span>
+          </div>
+        </ng-template>
+      </ng-select>
+
+      <div class="option" *ngIf="this.selectedUsers2.length === 5 && select.focused">
+        five symptoms limit reached! click Search
+      </div>
+
+    </div>
+    <!-- search button -->
+    <div class="align-center">
+      <button (click)="openQuestionModal()" class="custom-button">
+        <div class="custom-text">
+          Search
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

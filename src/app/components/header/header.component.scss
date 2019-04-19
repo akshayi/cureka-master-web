@@ -1,0 +1,105 @@
+.header{
+    width: 100%;
+    display: flex;
+    background: #f7f7f7;
+    height:100%;
+    padding: 25px 22px;
+}
+
+.menu{
+    text-align: right;
+        margin: auto 0px auto auto;
+}
+
+.verticle-align{
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+
+/**
+* Logo css
+*/
+.logo{
+    width: 104px;
+    height: 28px;
+    font-family: Muli;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 33px;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.1617646px;
+}
+  
+.outline-logo{
+      width: 107px;
+      height: 35px;
+      background: #d2d9d3;
+      margin: 8px 0px;
+}
+  
+
+/**
+* Burger icon
+*/
+.display-icon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+/**
+* Mobile view
+*/
+@media only screen and (max-width: 400px) {
+    .header{
+        width: 100%;
+        display: flex;
+        background: #f7f7f7;
+        height:100%;
+        padding: 15px 25px;
+    }
+
+    .logo{
+        width: 71px;
+        height: 17px;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: unset;
+        letter-spacing: 0.09558819px;
+    }    
+
+    .outline-logo{
+        width: 67px;
+        height: 21px;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 22px;
+        height: 2px;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+}

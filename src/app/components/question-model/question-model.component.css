@@ -1,0 +1,42 @@
+.display-hide {
+    display: none;
+    font-size: 15px;
+    margin-top: 5px
+}
+
+.clear-text {
+    text-align: right;
+    cursor: default;
+}
+
+.header-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #B29090;
+}
+
+.cross-icon {
+    font-size: 25px;
+}
+
+::ng-deep .modal-dialog {
+    max-width: 750px;
+}
+
+@media(max-width: 650px) {
+    .mobile-hide {
+        display: none;
+    }
+    .display-hide {
+        display: block;
+    }
+    .clear-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .header-text {
+        font-size: 15px;
+        font-weight: 700
+    }
+}
