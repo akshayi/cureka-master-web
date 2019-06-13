@@ -5,6 +5,10 @@ body {
     font-family: Muli;
 }
 
+.col-6 {
+    margin-right: -25px;
+}
+
 .custom-text {
     font-family: Muli;
     font-weight: 800;
@@ -23,4 +27,14 @@ body {
 app-medicine-model {
     height: auto;
     overflow: auto;
+}
+
+.main-classes .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    text-align: left;
+    margin-left: 5px
+}
+
+.main-classes .day-select .ng-dropdown-panel {
+    margin-left: -5px;
+    margin-top: 25px;
 }
