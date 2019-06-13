@@ -1,69 +1,77 @@
-
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
-.main{
-  background: #f7f7f7;
-  height:100%;
+.main {
+  background: white;
+  height: 100%;
   padding-left: 25px;
   padding-right: 25px;
-  min-height: 868px;
+  // min-height: 868px;
 }
 
-.main-text{
-    width: 715.1px;
-    padding-top: 60px;
+.main-text {
+  width: 715.1px;
+  padding-top: 60px;
+  font-family: Muli;
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 60px;
+  letter-spacing: 0.2509803px;
+}
+.align-center {
+  .custom-button {
     font-family: Muli;
-    font-size: 68px;
-    font-weight: 800;
-    line-height: 60px;
-    letter-spacing: 0.2509803px;
+    width: 190px;
+    align-items: center;
+    height: 45px;
+    margin-top: 73px;
+    background: white;
+    border: 2px solid #f05b4d;
+    box-shadow: 0 10px 16px 0 rgba(43, 43, 43, 0.2), 0 6px 20px 0 rgba(43, 43, 43, 0.19);
+    color: #f05b4d;
+    font-weight: bolder;
+    font-size: 20px;
+  }
 }
 
-
-.custom-button{
-  width: 144px;
-  height: 58px;
-  margin-top: 73px;
-  background: #000000;
-  margin-left: auto;
-  margin-right: auto;
-  border:0px;
+.custom-button:hover {
+  background: #f05b4d !important;
+  color: white !important;
 }
 
-.custom-text{
-    width: 99px;
-    height: 30px;
-    color: #ffffff;
-    font-family: Muli;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 30px;
-    letter-spacing: 0.1764705px;
+.custom-text {
+  width: 99px;
+  height: 30px;
+  color: #ffffff;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: 0.1764705px;
 }
 
-.about-us{
-    height: 50px;
-    font-family: Muli;
-    margin-top: 100px;
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 31px;
-    letter-spacing: 0.1838236px;
+.about-us {
+  height: 50px;
+  font-family: Muli;
+  margin-top: 100px;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 31px;
+  letter-spacing: 0.1838236px;
 }
 
 /**
 * Tag input selector
 */
-.custom-input{
+.custom-input {
   max-width: 500px;
   min-height: 70px;
   margin: 40px auto auto auto;
-  border: 2px solid black; 
+  border: 2px solid black;
   background: #ffffff;
 }
 
-.custom-input ::ng-deep .ng-dropdown-panel{
-	position:unset;
+.custom-input ::ng-deep .ng-dropdown-panel {
+  position: unset;
 }
 
 .custom-input ::ng-deep .ng-dropdown-panel .scroll-host {
@@ -72,7 +80,7 @@
   position: unset;
   width: 100%;
   border: 2px solid black;
-  background: #ffffff;
+  background: white;
   display: block;
   -webkit-overflow-scrolling: touch;
   margin-top: 7px;
@@ -80,21 +88,21 @@
 }
 
 .custom-input ::ng-deep .ng-value-container {
-    padding: 15px 15px 13px 15px;
-    flex-wrap: wrap;
+  padding: 15px 15px 13px 15px;
+  flex-wrap: wrap;
 }
 
 .custom-input ::ng-deep .ng-has-value {
-  .ng-value-container{
-    .ng-placeholder{
+  .ng-value-container {
+    .ng-placeholder {
       display: none;
     }
   }
 }
 
-.custom-input ::ng-deep .ng-select-container{
-  .ng-value-container{
-    .ng-placeholder{
+.custom-input ::ng-deep .ng-select-container {
+  .ng-value-container {
+    .ng-placeholder {
       font-family: Muli;
       font-size: 25px;
       font-weight: 800;
@@ -109,11 +117,12 @@
   }
 }
 
-.custom-input ::ng-deep .ng-clear-wrapper{
+.custom-input ::ng-deep .ng-clear-wrapper {
   display: none;
 }
 
-.custom-input ::ng-deep .ng-option-label,.ng-value-label{
+.custom-input ::ng-deep .ng-option-label,
+.ng-value-label {
   font-family: Muli;
   font-size: 25px;
   font-weight: 800;
@@ -121,7 +130,7 @@
   letter-spacing: 0.1838236px;
 }
 
-.custom-input ::ng-deep .ng-input>input {
+.custom-input ::ng-deep .ng-input > input {
   box-sizing: content-box;
   background: none;
   border: 0;
@@ -139,22 +148,21 @@
   padding: 0px;
 }
 
-.custom-input ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
- text-align: left;
- padding-left:15px;
- font-family: Muli;
- font-size: 25px;
- font-weight: 800;
- line-height: 31px;
- letter-spacing: 0.1838236px;
- 
+.custom-input ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  text-align: left;
+  padding-left: 15px;
+  font-family: Muli;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 31px;
+  letter-spacing: 0.1838236px;
 }
-.custom-input ::ng-deep .ng-option.ng-option-disabled{
-  color: #b29090;
-  text-align: center!important;
+.custom-input ::ng-deep .ng-option.ng-option-disabled {
+  color: #f05b4d;
+  text-align: center !important;
 }
 
-.option{
+.option {
   background: #ffffff;
   max-width: 500px;
   text-align: left;
@@ -165,17 +173,17 @@
   letter-spacing: 0.1838236px;
   margin: auto;
   border: 2px solid black;
-  color: #b29090;
+  color: #f05b4d;
   text-align: center !important;
 }
 
 @media only screen and (max-width: 1200px) {
-  .main-text{
+  .main-text {
     font-size: 58px;
   }
 }
 @media only screen and (max-width: 900px) {
-  .main-text{
+  .main-text {
     font-size: 48px;
   }
 }
@@ -184,22 +192,22 @@
 * Mobile view
 */
 @media only screen and (max-width: 400px) {
-  .main-text{
+  .main-text {
     width: 100%;
     font-size: 26px;
-    padding-top:30px;
+    padding-top: 30px;
     font-weight: 800;
     line-height: 33px;
     letter-spacing: 0.1359476px;
   }
 
-  .custom-input{
+  .custom-input {
     max-width: 270px;
     width: 100%;
     min-height: 49px;
     border: 2px solid;
   }
-  .option{
+  .option {
     max-width: 270px;
     width: 100%;
     border: 2px solid black;
@@ -209,14 +217,15 @@
     padding: 5px 5px 2px 5px;
   }
 
-  .custom-input ::ng-deep .ng-option-label,.ng-value-label{
+  .custom-input ::ng-deep .ng-option-label,
+  .ng-value-label {
     font-size: 14px;
     font-weight: 800;
     line-height: 11px;
     letter-spacing: 0.06617649px;
   }
 
-  .custom-input ::ng-deep .ng-input>input {
+  .custom-input ::ng-deep .ng-input > input {
     box-sizing: content-box;
     background: none;
     border: 0;
@@ -235,17 +244,17 @@
     padding: 0px;
   }
 
-  .custom-input ::ng-deep .ng-option.ng-option-disabled{
+  .custom-input ::ng-deep .ng-option.ng-option-disabled {
     font-size: 14px;
     font-weight: 800;
     line-height: 11px;
-    
+
     letter-spacing: 0.06617649px;
   }
 
-  .custom-input ::ng-deep .ng-select-container{
-    .ng-value-container{
-      .ng-placeholder{
+  .custom-input ::ng-deep .ng-select-container {
+    .ng-value-container {
+      .ng-placeholder {
         font-size: 14px;
         font-weight: 800;
         line-height: 11px;
@@ -254,37 +263,47 @@
       }
     }
   }
-  
+
   .custom-input ::ng-deep .ng-dropdown-panel .scroll-host {
     max-height: 141px;
   }
-  
-  .custom-input ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
+
+  .custom-input ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
     text-align: left;
-    padding-left:5px;
+    padding-left: 5px;
   }
 
-  .custom-input ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
-    padding-left:5px;
+  .custom-input ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    padding-left: 5px;
     font-size: 14px;
-   }
-
-  .custom-text{
+  }
+  .align-center .custom-text {
     font-size: 20px;
     font-weight: 800;
     line-height: 25px;
     letter-spacing: 0.1470588px;
-    width:100%;
+    width: 100%;
   }
 
-  .custom-button{
-    width: 130px;
-    height: 49px;
-    margin-top:40px;
-    border: none; 
+  .custom-button {
+    width: 120px !important;
+    align-items: center !important;
+    height: 40px !important;
+    margin-top: 50px !important;
+    background: white !important;
+    border: 1px #f05b4d solid !important;
+    box-shadow: 0 10px 16px 0 rgba(43, 43, 43, 0.2), 0 6px 20px 0 rgba(43, 43, 43, 0.19) !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    font-weight: bolder !important;
   }
 
-  .about-us{
+  .custom-button :hover {
+    color: #ffffff;
+    background: #f05b4d;
+  }
+
+  .about-us {
     height: 31px;
     font-size: 25px;
     font-weight: 800;

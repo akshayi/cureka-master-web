@@ -15,10 +15,27 @@
 .next-button {
     width: 240px;
     height: 45px;
-    background: #A8A6C3;
+    margin: 20px;
+    font-family: Muli;
+    background: white;
+    border: 2px solid #f05b4d;
+    box-shadow: 0 10px 16px 0 rgba(43, 43, 43, 0.2), 0 6px 20px 0 rgba(43, 43, 43, 0.19);
+    color: #f05b4d;
+    font-weight: bolder;
     font-size: 22px;
-    color: black;
-    margin: 20px
+}
+
+.next-button:hover {
+    width: 240px;
+    height: 45px;
+    margin: 20px;
+    font-family: Muli;
+    background: #f05b4d;
+    border: 2px solid #f05b4d;
+    box-shadow: 0 10px 16px 0 rgba(43, 43, 43, 0.2), 0 6px 20px 0 rgba(43, 43, 43, 0.19);
+    color: white;
+    font-weight: bolder;
+    font-size: 22px;
 }
 
 .next-button:hover, .next-button:focus {
@@ -40,7 +57,7 @@
     text-align: left;
     font-size: 18px;
     font-weight: 700;
-    color: #B29090;
+    color: black;
 }
 
 .bs-stepper-circle-active {
@@ -53,7 +70,7 @@
     padding: 10px 0px;
     line-height: 1em;
     color: #fff;
-    background-color: #96A0D2;
+    background-color: #f05b4d;
     border-radius: 6em;
     font-size: 20px;
 }
@@ -108,7 +125,7 @@
         text-align: left;
         font-size: 12px;
         font-weight: 700;
-        color: #B29090;
+        color: black;
     }
     .bs-stepper-circle-active {
         display: inline-flex;
@@ -120,7 +137,7 @@
         border-radius: 1em;
         width: 21px;
         height: 19px;
-        background: #96A0D2;
+        background: #f05b4d;
         font-size: 14px;
     }
     .bs-stepper-circle {
@@ -145,11 +162,30 @@
         right: 0;
     }
     .next-button {
+        font-family: Muli;
+        background: white;
+        border: 2px solid #f05b4d;
+        box-shadow: 0 10px 16px 0 rgba(43, 43, 43, 0.2), 0 6px 20px 0 rgba(43, 43, 43, 0.19);
+        color: #f05b4d;
+        font-weight: bolder;
         width: 100%;
-        background: #A8A6C3;
         font-size: 22px;
         bottom: 0px;
-        color: black;
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+    }
+    .next-button:disabled {
+        background: white;
+        opacity: 50;
+        border: 2px solid #d2b7b5;
+        font-family: Muli;
+        box-shadow: 0 10px 16px 0 rgba(43, 43, 43, 0.2), 0 6px 20px 0 rgba(43, 43, 43, 0.19);
+        color: #d2b7b5;
+        font-weight: bolder;
+        width: 100%;
+        font-size: 22px;
+        bottom: 0px;
         position: absolute;
         margin: 0px;
         padding: 0px;
@@ -165,7 +201,7 @@
 .header-text {
     font-size: 22px;
     font-weight: 700;
-    color: #B29090;
+    color: black;
 }
 
 .cross-icon {

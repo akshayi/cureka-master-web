@@ -3,28 +3,26 @@
     <div class="custom-text title align-center">
         <div>
             <span aria-hidden="true" class="cross-icon" (click)="modalRef.hide()">&times;</span>
-            Medicine A
+            {{medicine.name}}
         </div>
     </div>
     <!-- Information -->
     <div class="details custom-text text-md">
         <div class="dir-row">
             <div class="box">
-                <div class="align-center">
-                    Medicine A<br />image
-                </div>
+                <img class="image-style" src={{medicine.image}} />
             </div>
             <div class="info">
                 <div>
-                    <p>Type :</p>
-                    <p>Dosage :</p>
-                    <p>Key Ingredients :</p>
+                    <p>Type :{{medicine.Type}}</p>
+                    <p>Dosage : {{medicine.Dosage}}</p>
+                    <p>Key Ingredients :{{medicine.KeyIngredients}}</p>
                 </div>
             </div>
         </div>
         <div class="buy">
-            <p>More Info :</p>
-            <p>Where to buy :</p>
+            <p>More Info: {{medicine.MoreInfo}}</p>
+            <p>Where to buy : {{medicine.WheretoBuy}}</p>
         </div>
     </div>
     <!-- Done button -->

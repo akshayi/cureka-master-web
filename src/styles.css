@@ -5,25 +5,22 @@ body {
     font-family: Muli;
 }
 
-.custom-text{
+.custom-text {
     font-family: Muli;
     font-weight: 800;
 }
 
-.align-center{
+.align-center {
     width: 100%!important;
-    text-align:center!important;
+    text-align: center!important;
 }
 
-.custom-button{
-    width: 144px;
-    height: 58px;
-    margin-top: 73px;
-    background: #000000;
+.custom-button {
     margin-left: auto;
     margin-right: auto;
-    border:0px;
 }
-app-medicine-model{
-    height: 100%;
+
+app-medicine-model {
+    height: auto;
+    overflow: auto;
 }

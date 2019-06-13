@@ -1,16 +1,16 @@
 <div class="main">
   <!-- title -->
-  <div class="custom-text text-lg align-center">
-    Result : XYZ
+  <div class="custom-text text-lg align-center" style="margin-bottom: 35px">
+    Result :<span *ngFor="let item of selectedSymptoms"> {{item}} , </span>
   </div>
   <div class="custom-text text-md align-center">
     Medication
   </div>
   <!-- Medication options div -->
   <div class="medication-main flex-container">
-    <div class="box-main verticle-align" *ngFor="let item of list;let i = index">
-      <div class="custom-text box-text" (click)="openQuestionModal()">
-        {{item.text}}<br />{{item.image}}
+    <div class="box-main verticle-align" *ngFor="let med of medicine">
+      <div class="custom-text box-text" (click)="openQuestionModal(med)">
+        {{med.name}}
       </div>
     </div>
   </div>

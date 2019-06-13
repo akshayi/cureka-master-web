@@ -1,71 +1,71 @@
 /**
 * Main div css
 */
-.main{
-    background: #f7f7f7;
-    height:100%;
-    padding-left: 25px;
-    padding-right: 25px;
-    min-height: 868px;
+.main {
+  background: white;
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  // min-height: 868px;
 }
 
 /**
 * Text css
 */
 
-.text-lg{
-    width: 319.5px;
-    height: 60px;
-    font-size: 48px;
-    line-height: 60px;
-    letter-spacing: 0.2509803px;
+.text-lg {
+  width: 319.5px;
+  height: 60px;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.2509803px;
 }
 
-.text-md{
-    width: 163px;
-    height: 31px;
-    margin-top: 28px;
-    margin-bottom: 40px;
-    font-size: 25px;
-    line-height: 31px;
-    letter-spacing: 0.1838236px;
+.text-md {
+  width: 163px;
+  height: 31px;
+  margin-top: 28px;
+  margin-bottom: 40px;
+  font-size: 25px;
+  line-height: 31px;
+  letter-spacing: 0.1838236px;
 }
 
 /**
 * Alignment css
 */
 
-.verticle-align{
-    align-items: center;
-    display: flex;
+.verticle-align {
+  align-items: center;
+  display: flex;
 }
 
 .flex-container {
-    display: flex;
-    flex-flow: row wrap;    
-    justify-content:space-between;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 /**
 * Madication div
 */
-.medication-main{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 851px;
-    justify-content: start;
+.medication-main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 851px;
+  justify-content: start;
 }
 
-.box-main{
-    width: 176px;
-    height: 109px;
-    border: 1px solid #979797;
-    background: #d8d8d8;
-    margin: 17px
+.box-main {
+  width: 176px;
+  height: 109px;
+  border: 1px solid #f05b4d;
+  background: white;
+  margin: 17px;
 }
 
-.box-text{
-  font-size: 25px;
+.box-text {
+  font-size: 18px;
   margin: auto;
   line-height: 31px;
   letter-spacing: 0.1838236px;
@@ -74,78 +74,81 @@
 /**
 * Tablet view
 */
-@media only screen and (max-width: 1000px){
-    .medication-main{
-        max-width: 700px;
-    }
+@media only screen and (max-width: 1000px) {
+  .medication-main {
+    max-width: 700px;
+  }
 }
 
-@media only screen and (max-width: 720px){
-    .medication-main{
-        max-width: 420px;
-    }
-
+@media only screen and (max-width: 720px) {
+  .medication-main {
+    max-width: 420px;
+  }
+  .box-text {
+    font-size: 15px;
+    padding: 5px;
+  }
 }
 
 /**
 * Mobile view
 */
 @media only screen and (max-width: 450px) {
-    /**
+  /**
     * Text css
     */
-    .text-lg,.text-md{
-        height: 29px;
-        font-size: 23px;
-        line-height: 29px;
-        letter-spacing: 0.1359476px;
-    }
-    
-    .text-md{
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
+  .text-lg,
+  .text-md {
+    height: 29px;
+    font-size: 23px;
+    line-height: 29px;
+    letter-spacing: 0.1359476px;
+  }
 
-    /**
+  .text-md {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  /**
     * Alignment css
     */
-    .flex-container {
-        justify-content: space-between;
-    }
+  .flex-container {
+    justify-content: space-between;
+  }
 
-    /**
+  /**
     * Madication div
     */
-    .medication-main{
-        margin-left: unset;
-        margin-right: unset;
-        // max-width: 300px;
-    }
+  .medication-main {
+    margin-left: unset;
+    margin-right: unset;
+    // max-width: 300px;
+  }
 
-    .box-main{
-        margin:10px 0px;
-    }
+  .box-main {
+    margin: 10px 0px;
+  }
 
-    .box-text{
-        margin: auto;
-        font-size: 18px;
-        line-height: 23px;
-        letter-spacing: 0.132353px;
-    }
+  .box-text {
+    margin: auto;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: 0.132353px;
+  }
 }
 
-@media only screen and (max-width: 400px){
-    .box-main{
-        min-width: 124px;
-        height: 73px;
-        max-width: 150px;
-    }
+@media only screen and (max-width: 400px) {
+  .box-main {
+    min-width: 124px;
+    height: 73px;
+    max-width: 150px;
+  }
 }
 
-
-@media only screen and (max-width: 330px){
-    .box-main{
-        width: 124px;
-        height: 73px;
-    }
+@media only screen and (max-width: 330px) {
+  .box-main {
+    width: 124px;
+    height: 73px;
+  }
 }

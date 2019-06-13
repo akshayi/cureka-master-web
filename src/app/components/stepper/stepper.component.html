@@ -1,244 +1,51 @@
-<app-custom-stepper>
-  <!-- Step 1 -->
-  <cdk-step>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">1. How Long Have You been Having a Fever For ? </p>
-      </div>
-      <div class="col-md-4 col-6">
-        <ng-select class="day-select" [searchable]='false' [(ngModel)]="Day" [items]="list" bindLabel="day">
-        </ng-select>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6 question-align">
-        <p class="questions">2. Do You Have Wet or Dry Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Wet" name="cough" class="radio-button">
-          <span class="radio-label"> Wet</span>
-        </div>
-        <div>
-          <input type="radio" value="Dry" name="cough" class="radio-button">
-          <span class="radio-label"> Dry</span>
-        </div>
-      </div>
-    </div>
+<div class="main-classes">
+  <app-custom-stepper (updatePreviousIndex)='updatePreviousIndex($event)' [lastIndex]="lastIndex"
+    [questions]="questions" [selectedSymptoms]='selectedSymptoms' [formValid]='form.valid'>
+    <cdk-step #step1="cdkStep">
+      <form [formGroup]="form">
+        <div *ngFor="let question of step;let i=index;last as isLast">
+          <div class="row questions-col" *ngIf="!question.dependent">
+            <div class="col-md-8 col-6  question-align">
+              <p class="questions">{{i+1}}. {{ question.question}} </p>
+            </div>
+            <div class="col-md-4 col-6" *ngIf="question.type==='DropDown'">
+              <ng-select class="day-select" (change)="changeRadioValue(i,question.related,isLast)" [searchable]='false'
+                formControlName={{question.name}} [items]="question.options"> </ng-select>
+            </div>
+            <div class="col-md-4 col-6 radio-button-label"
+              [ngStyle]="{'flex-wrap': question.options.length>2?'wrap':''}" *ngIf="question.type==='Radio'">
+              <div *ngFor="let value of question.options">
+                <label class="container">
+                  <input type="radio" type="radio" [formControlName]=question.name class="radio-button"
+                    (click)="changeRadioValue(i,question.related,isLast,value)" [value]="value.key">
+                  <span class="radio-label"> {{value.key}}</span>
+                  <span class="checkmark"> </span>
 
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">3. Does Your Chest Hurt When You Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6  radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> Yes</span>
-        </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8  col-6 question-align">
-        <p class="questions">4. Does Your Chest Hurt When You Cough ? </p>
-      </div>
-      <div class="col-md-4  col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt" class="radio-button">
-          <span class="radio-label"> Yes</span>
-        </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-  </cdk-step>
-  <!-- Step 2 -->
-  <cdk-step>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">1. How Long Have You been Having a Fever For ? </p>
-      </div>
-      <div class="col-md-4 col-6">
-        <ng-select class="day-select" [searchable]='false' [(ngModel)]="Day" [items]="list" bindLabel="day">
-        </ng-select>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6 question-align">
-        <p class="questions">2. Do You Have Wet or Dry Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Wet" name="cough" class="radio-button">
-          <span class="radio-label"> Wet</span>
-        </div>
-        <div>
-          <input type="radio" value="Dry" name="cough" class="radio-button">
-          <span class="radio-label"> Dry</span>
-        </div>
-      </div>
-    </div>
+                </label>
+                <!-- <input type="radio" [formControlName]=question.name class="radio-button"
+                  (click)="changeRadioValue(i,question.related,isLast,value)" [value]="value.key">
+                <span class="radio-label"> {{value.key}} </span> -->
+              </div>
+            </div>
 
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">3. Does Your Chest Hurt When You Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6  radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> Yes</span>
+            <div class="col-md-4 col-6 radio-button-label" *ngIf="question.type==='Free-Text'">
+              <ng-select #select (change)="changeRadioValue(i,question.related,isLast)" [items]="medicine"
+                [multiple]="true" maxSelectedItems="2" bindLabel="name" formControlName={{question.name}}
+                class="custom-input">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                  <div class="ng-value" *ngFor="let item of (items ? items.slice(0,5): []);let i = index">
+                    <span class="ng-value-label">{{item.name}}</span>
+                    <span class="ng-value-icon right" aria-hidden="true">,</span>
+                  </div>
+                  <div class="ng-value" *ngIf="items.length > 1">
+                    <span class="ng-value-label">{{items.length - 1}} more...</span>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
         </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8  col-6 question-align">
-        <p class="questions">4. Does Your Chest Hurt When You Cough ? </p>
-      </div>
-      <div class="col-md-4  col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt" class="radio-button">
-          <span class="radio-label"> Yes</span>
-        </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-  </cdk-step>
-  <!-- Step 3 -->
-  <cdk-step>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">1. How Long Have You been Having a Fever For ? </p>
-      </div>
-      <div class="col-md-4 col-6">
-        <ng-select class="day-select" [searchable]='false' [(ngModel)]="Day" [items]="list" bindLabel="day">
-        </ng-select>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6 question-align">
-        <p class="questions">2. Do You Have Wet or Dry Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Wet" name="cough" class="radio-button">
-          <span class="radio-label"> Wet</span>
-        </div>
-        <div>
-          <input type="radio" value="Dry" name="cough" class="radio-button">
-          <span class="radio-label"> Dry</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">3. Does Your Chest Hurt When You Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6  radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> Yes</span>
-        </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8  col-6 question-align">
-        <p class="questions">4.Upload an Image of Your Rashes? </p>
-      </div>
-      <div class="col-md-4  col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt" class="radio-button">
-          <span class="radio-label"> Yes</span>
-        </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-  </cdk-step>
-  <!-- Step 4 -->
-  <cdk-step>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6 question-align">
-        <p class="questions">7. Do You Have Wet or Dry Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6 radio-button-label">
-        <div>
-          <input type="radio" value="Wet" name="cough" class="radio-button">
-          <span class="radio-label"> Wet</span>
-        </div>
-        <div>
-          <input type="radio" value="Dry" name="cough" class="radio-button">
-          <span class="radio-label"> Dry</span>
-        </div>
-      </div>
-    </div>
-    <div class="row questions-col">
-      <div class="col-md-8 col-6  question-align">
-        <p class="questions">8. Does Your Chest Hurt When You Cough ? </p>
-      </div>
-      <div class="col-md-4 col-6  radio-button-label">
-        <div>
-          <input type="radio" value="Yes" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> Yes</span>
-        </div>
-        <div>
-          <input type="radio" value="No" name="coughHurt1" class="radio-button">
-          <span class="radio-label"> No</span>
-        </div>
-      </div>
-    </div>
-    <!-- Upload Image -->
-    <div class="row questions-col">
-      <div class="col-md-8 col-6 question-align">
-        <p class="questions mb-1  ">9.Upload an image of your rashes</p>
-        <!--Image MD SM-->
-        <div class="upload-img-div">
-          <img class="upload-img" src="../../../assets/image/example.jpg" />
-        </div>
-      </div>
-      <!-- LG -->
-      <div class="col-md-4 col-6 input-div">
-        <div class="text-div">
-          <input type="text" class="input-color input-text" placeholder="Enter here" />
-        </div>
-
-        <div class="file-div">
-          <button class="custom-text input-color input-file">
-            Upload an image<i class='fas arrow-icon'>&#xf30c;</i>
-          </button>
-          <input type="file" />
-        </div>
-      </div>
-      <!-- MD SM -->
-      <div class="col-md-4 col-6 upload-img-div">
-        <div class="row">
-          <button class="input-color image-btn">Take Photo</button>
-        </div>
-        <div class="row">
-          <button class="input-color image-btn">Upload Image</button>
-        </div>
-        <div class="row">
-          <button class="input-color image-btn">Save Image</button>
-        </div>
-      </div>
-    </div>
-  </cdk-step>
-</app-custom-stepper>
+      </form>
+    </cdk-step>
+  </app-custom-stepper>
+</div>

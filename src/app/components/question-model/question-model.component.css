@@ -12,7 +12,7 @@
 .header-text {
     font-size: 22px;
     font-weight: 700;
-    color: #B29090;
+    color: black;
 }
 
 .cross-icon {
@@ -38,5 +38,12 @@
     .header-text {
         font-size: 15px;
         font-weight: 700
+    }
+    ::ng-deep .modal-dialog {
+        overflow: auto;
+    }
+    ::ng-deep .modal-content {
+        height: 100% !important;
+        overflow: auto;
     }
 }

@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
 
   list: any;
   bsModalRef: BsModalRef;
-  selectedUsers2 = [];
+  selectedSymptoms = [];
   config = {
     animated: true,
     keyboard: true,
@@ -20,41 +20,51 @@ export class SearchComponent implements OnInit {
     ignoreBackdropClick: true,
   }
 
-  constructor(private staticModal: BsModalService, private mixpanal: MixpanelServiceService) { }
+  constructor(private staticModal: BsModalService, private mixPanel: MixpanelServiceService) { }
 
   ngOnInit() {
-    this.mixpanal.track("Page Loaded - Search page");
+    this.mixPanel.track("Page Loaded - Search page");
 
     this.list = [
       {
-        login: 'cough'
+        id: 1,
+        value: 'sore-throat'
       }, {
-        login: 'fever'
+        id: 2,
+        value: 'runny-nose'
       },
       {
-        login: 'fea'
+        id: 3,
+        value: 'cough'
       }, {
-        login: 'feb'
+        id: 4,
+        value: 'fever'
       },
       {
-        login: 'sore-throat'
+        id: 5,
+        value: 'fea'
       }, {
-        login: 'runny-nose'
+        id: 6,
+        value: 'feb'
       }, {
-        login: 'flu'
+        id: 7,
+        value: 'flu'
       },
       {
-        login: 'fox'
+        id: 8,
+        value: 'fox'
       }, {
-        login: 'cox'
+        id: 9,
+        value: 'cox'
       },
     ]
   }
 
 
-  openQuestionModal() {
-    this.mixpanal.track("Click - Search");
-    this.bsModalRef = this.staticModal.show(StepperComponent, this.config);
+  openQuestionModal(selectedSymptoms) {
+    this.mixPanel.track("Click - Search");
+    if (selectedSymptoms.length > 0) {
+      this.bsModalRef = this.staticModal.show(StepperComponent, { initialState: { selectedSymptoms: selectedSymptoms } });
+    }
   }
-
 }

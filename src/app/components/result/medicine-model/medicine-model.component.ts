@@ -8,6 +8,7 @@ import { MixpanelServiceService } from 'src/app/core/services/mixpanel-service.s
   styleUrls: ['./medicine-model.component.scss']
 })
 export class MedicineModelComponent implements OnInit {
+  medicine: any;
 
   constructor(public modalRef: BsModalRef, private mixpanal: MixpanelServiceService) { }
 
@@ -15,7 +16,5 @@ export class MedicineModelComponent implements OnInit {
     this.mixpanal.track("Page Loaded -medicine detail page");
   }
 
-  ngOnDestroy() {
-  
-  }
+  ngOnDestroy() { }
 }
