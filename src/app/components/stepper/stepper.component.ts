@@ -58,7 +58,7 @@ export class StepperComponent implements OnInit {
     symptomsQuestions['symptoms-Questions'].Questions.map((symptom) => {
       this.isFound = false;
       this.selectedSymptoms.map(a => {
-        symptom.symptoms.some(b => {
+        symptom.symptoms.map(b => {
           if (b.id === a.id) {
             return this.isFound = true;
           }

@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
         id: 2,
         value: 'runny-nose'
       },
-      {
+    /*   {
         id: 3,
         value: 'cough'
       }, {
@@ -56,7 +56,7 @@ export class SearchComponent implements OnInit {
       }, {
         id: 9,
         value: 'cox'
-      },
+      }, */
     ]
   }
 

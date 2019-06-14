@@ -44,6 +44,12 @@ export class CustomStepperComponent extends CdkStepper implements OnInit {
           this.index.push(3);
           if (this.questions.length >= 15) {
             this.index.push(4);
+            if (this.questions.length >= 19) {
+              this.index.push(5);
+              if (this.questions.length >= 23) {
+                this.index.push(6)
+              }
+            }
           }
         }
       }
@@ -59,18 +65,7 @@ export class CustomStepperComponent extends CdkStepper implements OnInit {
     if (this.formValid) {
       if (this.currentIndex < this.index.length) {
         this.currentIndex++;
-        if (this.selectedIndex >= 15) {
-          this.index.push(5);
-          this.index.reduce(this.index[0]);
-          if (this.selectedIndex >= 19) {
-            this.index.push(6);
-            this.index.reduce(this.index[1]);
-            if (this.selectedIndex >= 23) {
-              this.index.push(7);
-              this.index.reduce(this.index[2]);
-            }
-          }
-        }
+
       }
       this.updatePreviousIndex.emit(this.lastIndex);
     }
